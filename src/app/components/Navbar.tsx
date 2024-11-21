@@ -1,3 +1,4 @@
+
 import { searchProducts } from "@/lib/actions"
 import { getCart } from "@/lib/db/cart"
 import Link from "next/link"
@@ -5,7 +6,9 @@ import Link from "next/link"
 
 export default async function Navbar() {
     const cart = await getCart()
+    const onLogout = async () => {
 
+    }
     return (
         <nav className="bg-white shadow">
             <div className="container mx-auto px-6 py-3 md:flex md:justify-between md:items-center">
@@ -50,7 +53,7 @@ export default async function Navbar() {
                         </form>
                     </div>
 
-                    <div className="flex flex-col md:flex-row md:mx-9">
+                    <div className="flex flex-col md:flex-row md:mx-6">
                         <Link className="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="/">Home</Link>
                         {/* <Link className="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="/contact">Contact</Link>
                         <Link className="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="/about">About</Link> */}
@@ -69,10 +72,22 @@ export default async function Navbar() {
                             </div>
                         </div>
                     </Link>
-
+                    {/* <form action="/api/users/logout" method="POST">
+                        <button
+                            type="submit"
+                            className="flex flex-col md:flex-row md:mx-6 py-2 px-4 bg-red-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+                        >
+                            Logout</button>
+                    </form> */}
+                    <div className="flex flex-col md:flex-row md:mx-6">
+                        <Link className="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="/logout">Logout Button</Link>
+                        {/* <Link className="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="/contact">Contact</Link>
+                        <Link className="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="/about">About</Link> */}
+                    </div>
                 </div>
-
             </div>
+
+
         </nav>
     )
 }
