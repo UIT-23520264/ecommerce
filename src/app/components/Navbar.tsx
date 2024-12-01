@@ -13,8 +13,11 @@ export default async function Navbar() {
         <nav className="bg-white shadow">
             <div className="container mx-auto px-6 py-3 md:flex md:justify-between md:items-center">
                 <div className="flex justify-between items-center">
+                    <div className="hidden md:flex p-1">
+                        <img className="w-[74px] h-[90px] " src="demo_logo.jpg" alt="" />
+                    </div>
                     <div className="md:mx-6">
-                        <Link className="text-gray-800 text-xl font-bold md:text-2xl hover:text-gray-700" href="/">Brand</Link>
+                        <Link className="text-gray-800 text-xl font-bold md:text-2xl hover:text-gray-700" href="/">Home</Link>
                     </div>
 
                     <div className="flex md:hidden">
@@ -28,7 +31,7 @@ export default async function Navbar() {
 
 
                 <div className="md:flex items-center">
-                    <div className="flex flex-col md:flex-row md:mx-9">
+                    <div className="flex flex-col md:flex-row md:mx-3">
                         <Link className="relative text-gray-700 hover:text-gray-600" href="/signup">
                             <div className="flex justify-center items-center">
                                 <div className="relative">
@@ -42,7 +45,7 @@ export default async function Navbar() {
                             </div>
                         </Link>
                     </div>
-                    <div className="w-full">
+                    {/* <div className="w-full">
                         <form action={searchProducts}>
                             <input
                                 type="text"
@@ -51,10 +54,16 @@ export default async function Navbar() {
                                 placeholder="Search..."
                             />
                         </form>
-                    </div>
+                    </div> */}
 
-                    <div className="flex flex-col md:flex-row md:mx-6">
-                        <Link className="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="/">Home</Link>
+                    <div className="flex items-center justify-center flex-col md:flex-row md:mx-6">
+                        <Link
+                            className="text-gray-800 text-xl font-bold md:text-1xl hover:text-gray-700"
+                            href="/about"
+                        >
+                            About Us
+                        </Link>
+
                         {/* <Link className="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="/contact">Contact</Link>
                         <Link className="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="/about">About</Link> */}
                     </div>
@@ -80,7 +89,9 @@ export default async function Navbar() {
                             Logout</button>
                     </form> */}
                     <div className="flex flex-col md:flex-row md:mx-6">
-                        <Link className="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="/logout">Logout Button</Link>
+                        <Link
+                            className="text-gray-800 text-xl font-bold md:text-1xl hover:text-gray-700"
+                            href="/profile">Your Information</Link>
                         {/* <Link className="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="/contact">Contact</Link>
                         <Link className="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="/about">About</Link> */}
                     </div>

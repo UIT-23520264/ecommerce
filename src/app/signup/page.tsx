@@ -10,7 +10,7 @@ export default function SignupPage() {
     const [user, setUser] = React.useState({
         email: "",
         password: "",
-        userName: "",
+        username: "",
     });
     const [buttonDisabled, setButtonDisabled] = React.useState(false);
     const [loading, setLoading] = React.useState(false);
@@ -19,7 +19,7 @@ export default function SignupPage() {
         e.preventDefault();
         try {
             setLoading(true);
-            const response = await axios.post("/api/users/register", user);
+            const response = await axios.post("/api/users/signup", user);
             console.log("Successfully", response.data);
             router.push("/login");
         } catch (error: any) {
@@ -34,7 +34,7 @@ export default function SignupPage() {
         if (
             user.email.length > 0 &&
             user.password.length > 0 &&
-            user.userName.length > 0
+            user.username.length > 0
         ) {
             setButtonDisabled(false);
         } else {
@@ -68,8 +68,8 @@ export default function SignupPage() {
                     className="w-full p-2 border rounded-lg mb-4 focus:outline-none focus:border-blue-500"
                     id="username"
                     type="text"
-                    value={user.userName}
-                    onChange={(e) => setUser({ ...user, userName: e.target.value })}
+                    value={user.username}
+                    onChange={(e) => setUser({ ...user, username: e.target.value })}
                     placeholder="Username"
                 />
 

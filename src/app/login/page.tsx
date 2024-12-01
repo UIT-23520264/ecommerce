@@ -1,9 +1,8 @@
 'use client';
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import axios  from "axios";
+import axios from "axios";
 import Link from "next/link";
-import { trackDynamic } from "next/dist/server/route-modules/app-route/module";
 import toast from "react-hot-toast";
 
 export default function LoginPage() {
@@ -15,28 +14,28 @@ export default function LoginPage() {
 
     const [buttonDisabled, setbuttonDisabled] = React.useState(false)
     const [loading, setLoading] = React.useState(false)
-    const onLogin = async() =>{
+    const onLogin = async () => {
         try {
             setLoading(true)
             const response = await axios.post("/api/users/login", user)
-            console.log("Login success" , response.data)
+            console.log("Login success", response.data)
             toast.success("Login success")
-            route.push("/profile")
-        } catch (error:any) {
-            console.log("Login failed", error.message)  
-            toast.error(error.message)          
-        }finally{
+            route.push("/Home")
+        } catch (error: any) {
+            console.log("Login failed", error.message)
+            toast.error(error.message)
+        } finally {
             setLoading(false)
         }
     }
-    useEffect(()=>{
-        if(user.email.length > 0 && user.password.length > 0){
+    useEffect(() => {
+        if (user.email.length > 0 && user.password.length > 0) {
             setbuttonDisabled(false)
         }
-        else{
+        else {
             setbuttonDisabled(true)
         }
-    },[user])
+    }, [user])
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-6 bg-gray-100">
             <div className="w-full max-w-md bg-white p-6 rounded-lg shadow-md">

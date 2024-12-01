@@ -4,8 +4,8 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
 export const metadata: Metadata = {
-  title: 'NextJS E-Commerce',
-  description: 'Created by Atil Mohamed El Amine',
+  title: 'Organic Ecommerce',
+  description: 'Created by Group 4',
 }
 
 export default function RootLayout({

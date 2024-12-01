@@ -16,31 +16,31 @@ export default async function Home() {
     <>
       <Hero />
       <div className='mt-10'>
-      {
-        productTypes.map((type) => (
-          (type.products.length != 0) && (
-          <div key={type.id}>
-            <div className="flex items-end">
-            <h2 className="text-4xl font-extrabold dark:text-white">{type.name}</h2>
-            <Link className="font-medium text-indigo-600 hover:text-indigo-500 ml-3" href={`/products/${type.name}`}>
-                        See more
-                        <span aria-hidden="true"> &rarr;</span>
-            </Link>
-            </div>
-              <div className="flex flex-wrap justify-center mb-8">
-                {
-                  type.products.slice(0, 3).map((product: Product) => (
-                      <ProductCard 
+        {
+          productTypes.map((type) => (
+            (type.products.length != 0) && (
+              <div key={type.id}>
+                <div className="flex items-end">
+                  <h2 className="text-4xl font-extrabold dark:text-white">{type.name}</h2>
+                  <Link className="font-medium text-indigo-600 hover:text-indigo-500 ml-3" href={`/products/${type.name}`}>
+                    See more
+                    <span aria-hidden="true"> &rarr;</span>
+                  </Link>
+                </div>
+                <div className="flex flex-wrap justify-center mb-8">
+                  {
+                    type.products.slice(0, 6).map((product: Product) => (
+                      <ProductCard
                         key={product.id}
                         product={product}
                       />
-                  ))
-                }
+                    ))
+                  }
+                </div>
               </div>
-          </div>
-          )
-        ))
-      }
+            )
+          ))
+        }
       </div>
     </>
   )

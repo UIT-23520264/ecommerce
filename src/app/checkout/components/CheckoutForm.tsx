@@ -99,19 +99,23 @@ export default function POST({ paypalClientId, subTotal, shipping }: Props) {
                 </div>
                 <div className="mt-3">
                     <div className="grid gap-y-3 gap-x-4 grid-cols-2">
-                        <div>
+                        {/* <div>
                             <label className="text-gray-600 font-semibold text-sm mb-2 ml-1">City</label>
                             <div>
                                 <input ref={cityInput} className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" type="text" />
                             </div>
-                        </div>
+                        </div> */}
                         <div>
                             <label className="text-gray-600 font-semibold text-sm mb-2 ml-1">Country</label>
                             <div>
                                 <select ref={countryInput} className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors">
-                                    <option value="usa">United States</option>
-                                    <option value="canada">Canada</option>
+                                    <option value="usa">TPHCM</option>
+                                    <option value="canada">Hà Nội</option>
                                 </select>
+                            </div>
+                            <label className="text-gray-600 font-semibold text-sm mb-2 ml-1">Phone</label>
+                            <div>
+                                <input ref={phoneInput} className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" type="tel" />
                             </div>
                         </div>
                         {/* <div>
@@ -129,10 +133,7 @@ export default function POST({ paypalClientId, subTotal, shipping }: Props) {
                     </div>
                 </div>
                 <div className="mt-3">
-                    <label className="text-gray-600 font-semibold text-sm mb-2 ml-1">Phone</label>
-                    <div>
-                        <input ref={phoneInput} className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" type="tel" />
-                    </div>
+
                 </div>
             </div>
             <div className="px-3 md:w-5/12">
