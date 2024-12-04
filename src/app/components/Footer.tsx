@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
     return (
@@ -46,7 +47,13 @@ export default function Footer() {
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
                     <div className="flex flex-col items-center md:items-start mb-4">
                         <div className="flex items-center justify-center mb-4">
-                            <img className="w-[160px] h-[180px]" src="demo_logo.jpg" alt="" />
+                            <Image
+                                src="/demo_logo.jpg" // Path to the image in the public directory
+                                alt="Demo Logo" // Add a meaningful alt text
+                                width={160} // Set the width (matches w-[160px])
+                                height={180} // Set the height (matches h-[180px])
+                                className="w-[160px] h-[180px]" // Additional Tailwind CSS classes if needed
+                            />
                         </div>
                         <p className="text-lg text-gray-600 font-bold">
                             Lựa chọn xanh - Tương lai sạch

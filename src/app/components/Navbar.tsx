@@ -2,6 +2,7 @@
 import { searchProducts } from "@/lib/actions"
 import { getCart } from "@/lib/db/cart"
 import Link from "next/link"
+import Image from "next/image"
 
 
 export default async function Navbar() {
@@ -14,7 +15,13 @@ export default async function Navbar() {
             <div className="container mx-auto px-6 py-3 md:flex md:justify-between md:items-center">
                 <div className="flex justify-between items-center">
                     <div className="hidden md:flex p-1">
-                        <img className="w-[74px] h-[90px] " src="demo_logo.jpg" alt="" />
+                        <Image
+                            src="/demo_logo.jpg" // Ensure the image is located in the public directory
+                            alt="Demo Logo" // Add a descriptive alt text
+                            width={74} // Matches the width in pixels (w-[74px])
+                            height={90} // Matches the height in pixels (h-[90px])
+                            className="w-[74px] h-[90px]" // Optional Tailwind classes
+                        />
                     </div>
                     <div className="md:mx-6">
                         <Link className="text-gray-800 text-xl font-bold md:text-2xl hover:text-gray-700" href="/">Home</Link>

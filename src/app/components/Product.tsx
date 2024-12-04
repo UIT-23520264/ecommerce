@@ -1,5 +1,6 @@
 import { Product } from "@prisma/client"
 import Link from "next/link"
+import Image from "next/image"
 
 type Props = {
     product: Product
@@ -10,8 +11,30 @@ export default function ProductCard({ product }: Props) {
     return (
         <div className="flex-none group my-5 mx-2 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
             <Link className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href={`/products/details/${id}`}>
-                <img className="peer absolute top-0 right-0 h-full w-full object-cover" src={images[0]} alt="product image" />
-                {images[1] && (<img className="peer absolute top-0 -right-96 h-full w-full object-cover transition-all delay-100 duration-1000 hover:right-0 peer-hover:right-0" src={images[1]} alt="product image" />)}
+                <div className="relative h-[400px] w-[400px] overflow-hidden">
+                    {/* Primary Image */}
+                    <Image
+                        className="peer absolute top-0 right-0 h-full w-full object-cover"
+                        src={images[0] || '/default-image.jpg'}
+                        alt="Primary product image"
+                        width={400}
+                        height={400}
+                        priority // Ensures this image is loaded eagerly
+                    />
+
+                    {/* Secondary Image */}
+                    {images[1] && (
+                        <Image
+                            className="peer absolute top-0 -right-96 h-full w-full object-cover transition-all delay-100 duration-1000 ease-in-out hover:right-0 peer-hover:right-0"
+                            src={images[1]}
+                            alt="Secondary product image"
+                            width={400}
+                            height={400}
+                            loading="lazy" // Secondary images can be lazy-loaded
+                        />
+                    )}
+                </div>
+
                 <div className="absolute  bottom-0 mb-4 flex space-x-4 w-full justify-center">
                     <div className="rounded-full h-3 w-3 bg-gray-200 border-2 border-white"></div>
                     <div className="rounded-full h-3 w-3 bg-gray-200 border-2 border-white"></div>

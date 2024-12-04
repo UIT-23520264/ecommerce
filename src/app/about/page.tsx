@@ -6,13 +6,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 py-12 md:py-24">
             <div className="grid md:grid-cols-2 gap-8 items-start">
                 <div className="relative h-[600px] md:h-[800px] sticky top-8">
-                    <img
-                        src="about_us.jpg "
-                        alt="Decorative image representing eco-friendly straws"
-                        //fill
-                        className="object-contain"
-                    //priority
-                    />
+                <Image src="/hehe.jpg" alt="Description" width={500} height={300} />
                 </div>
                 <div className="space-y-8">
                     <h1 className="text-4xl md:text-6xl font-serif text-gray-800">
