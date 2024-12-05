@@ -7,7 +7,7 @@ export default function Hero() {
     <div className="w-11/12 xl:w-4/5 h-[350px] m-auto bg-stone-200 rounded-xl">
       <div className="w-full h-full flex justify-center items-center">
         <div className="w-11/12 xl:w-1/2 p-5 space-y-5">
-          <h1 className="text-5xl font-semibold">Choose the natural products to protect the Earth.</h1>
+          <h1 className="text-5xl font-semibold">Lựa chọn sản phẩm từ thiên nhiên để bảo về Trái Đất.</h1>
           <form action={searchProducts}>
             <div className="bg-white flex items-center space-x-2 px-5 py-2 rounded-full">
               <AiOutlineSearch size={"1.2rem"} />

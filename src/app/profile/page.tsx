@@ -32,7 +32,7 @@ export default function LogoutPage() {
             <div className="w-full max-w-md bg-white rounded-lg shadow-md p-6">
                 <h1 className="text-2xl font-bold text-gray-800 mb-4 text-center">Profile</h1>
                 <hr className="border-gray-300 my-4" />
-                <p className="text-gray-600 text-center mb-6">Welcome to your profile page!</p>
+                <p className="text-gray-600 text-center mb-6">Trang thông tin của bạn!</p>
 
                 <h2 className="text-lg font-medium text-center text-gray-700 mb-6">
                     {data === "nothing" ? (
@@ -52,14 +52,14 @@ export default function LogoutPage() {
                         onClick={onLogout}
                         className="w-full py-3 px-4 bg-red-500 text-white font-medium rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2"
                     >
-                        Logout
+                        Đăng xuất
                     </button>
 
                     <button
                         onClick={getUserDetail}
                         className="w-full py-3 px-4 bg-blue-500 text-white font-medium rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
                     >
-                        View User Information
+                        Nhấn để xem thông tin người dùng
                     </button>
                 </div>
             </div>

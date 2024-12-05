@@ -5,7 +5,10 @@ const nextConfig = {
     },
     typescript: {
         ignoreBuildErrors: true,
-    }
-}
+    },
+    images: {
+        domains: ['ecofriend.vn', 'growgreen.com.vn', 'www.dhresource.com', 'skfoods.vn','onghutco.vn'], // Add the domains you need here
+    },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

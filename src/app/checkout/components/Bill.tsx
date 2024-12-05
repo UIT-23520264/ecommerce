@@ -17,7 +17,7 @@ export default function Bill({ subTotal, shipping }: Props) {
                         <span className="text-gray-600">Đơn hàng</span>
                     </div>
                     <div className="pl-3">
-                        <span className="font-semibold">${subTotal.toFixed(2)}</span>
+                        <span className="font-semibold">{subTotal.toFixed(2)} VND</span>
                     </div>
                 </div>
                 <div className="w-full flex items-center">
@@ -25,7 +25,7 @@ export default function Bill({ subTotal, shipping }: Props) {
                         <span className="text-gray-600">Tiền Ship</span>
                     </div>
                     <div className="pl-3">
-                        <span className="font-semibold">${shipping.toFixed(2)}</span>
+                        <span className="font-semibold">{shipping.toFixed(2)} VND</span>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@ export default function Bill({ subTotal, shipping }: Props) {
                         <span className="text-gray-600">Tổng Cộng</span>
                     </div>
                     <div className="pl-3">
-                        <span className="font-semibold text-gray-400 text-sm">VND</span> <span className="font-semibold">{total.toFixed(0)}K</span>
+                        <span className="font-semibold text-gray-400 text-sm">VND</span> <span className="font-semibold">{total.toFixed(0)}</span>
                     </div>
                 </div>
             </div>

@@ -8,7 +8,7 @@ export default function Footer() {
             <div
                 className="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between">
                 <div className="mr-12 hidden lg:block">
-                    <span>Get connected with us on social networks:</span>
+                    <span>Liên hệ với chúng tớ thông qua:</span>
                 </div>
 
                 <div className="flex justify-center">
@@ -69,7 +69,7 @@ export default function Footer() {
                         </p>
                         <p className="mb-4">
                             <Link href="/contact" className="text-neutral-600 hover:text-blue-500 transition-all duration-300">
-                                Contact
+                                Liên hệ
                             </Link>
                         </p>
                         <p>

@@ -50,7 +50,7 @@ export default function POST({ paypalClientId, subTotal, shipping }: Props) {
         }
     }
 
-    const paypalCaptureOrder = async orderId => {
+    const paypalCaptureOrder = async (orderId:any)=> {
         try {
             let response = await axios.post('/api/paypal/captureorder', {
                 orderId
@@ -68,7 +68,7 @@ export default function POST({ paypalClientId, subTotal, shipping }: Props) {
     return (
         <>
             <div className="md:w-7/12 lg:pr-10 mb-10">
-                <h2 className="text-3xl font-medium text-gray-900" id="slide-over-title">Checkout</h2>
+                <h2 className="text-3xl font-medium text-gray-900" id="slide-over-title">Check out</h2>
                 <div className="mt-10">
                     <label className="text-gray-600 font-semibold text-sm mb-2 ml-1">Email</label>
                     <div>
@@ -78,13 +78,13 @@ export default function POST({ paypalClientId, subTotal, shipping }: Props) {
                 <div className="mt-3">
                     <div className="grid gap-4 grid-cols-2">
                         <div>
-                            <label className="text-gray-600 font-semibold text-sm mb-2 ml-1">First Name</label>
+                            <label className="text-gray-600 font-semibold text-sm mb-2 ml-1">Họ</label>
                             <div>
                                 <input ref={firstNameInput} className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" type="text" />
                             </div>
                         </div>
                         <div>
-                            <label className="text-gray-600 font-semibold text-sm mb-2 ml-1">Last Name</label>
+                            <label className="text-gray-600 font-semibold text-sm mb-2 ml-1">Tên</label>
                             <div>
                                 <input ref={lastNameInput} className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" type="text" />
                             </div>
@@ -92,7 +92,7 @@ export default function POST({ paypalClientId, subTotal, shipping }: Props) {
                     </div>
                 </div>
                 <div className="mt-3">
-                    <label className="text-gray-600 font-semibold text-sm mb-2 ml-1">Address</label>
+                    <label className="text-gray-600 font-semibold text-sm mb-2 ml-1">Địa chỉ</label>
                     <div>
                         <input ref={addressInput} className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" type="text" />
                     </div>
@@ -106,14 +106,14 @@ export default function POST({ paypalClientId, subTotal, shipping }: Props) {
                             </div>
                         </div> */}
                         <div>
-                            <label className="text-gray-600 font-semibold text-sm mb-2 ml-1">Country</label>
+                            <label className="text-gray-600 font-semibold text-sm mb-2 ml-1">Thành phố</label>
                             <div>
                                 <select ref={countryInput} className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors">
                                     <option value="usa">TPHCM</option>
                                     <option value="canada">Hà Nội</option>
                                 </select>
                             </div>
-                            <label className="text-gray-600 font-semibold text-sm mb-2 ml-1">Phone</label>
+                            <label className="text-gray-600 font-semibold text-sm mb-2 ml-1">Số điện thoại</label>
                             <div>
                                 <input ref={phoneInput} className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" type="tel" />
                             </div>
@@ -131,9 +131,6 @@ export default function POST({ paypalClientId, subTotal, shipping }: Props) {
                         </div>
                     </div> */}
                     </div>
-                </div>
-                <div className="mt-3">
-
                 </div>
             </div>
             <div className="px-3 md:w-5/12">

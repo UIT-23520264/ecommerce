@@ -45,7 +45,7 @@ export default function SignupPage() {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100">
             <h1 className="text-3xl font-semibold mb-4">
-                {loading ? "Processing..." : "Sign up"}
+                {loading ? "Đang đăng ký..." : "Đăng ký"}
             </h1>
             <hr className="w-full max-w-md border-gray-300 mb-4" />
             <form className="w-full max-w-md bg-white p-6 rounded-lg shadow-md">
@@ -62,7 +62,7 @@ export default function SignupPage() {
                 />
 
                 <label htmlFor="userName" className="block mb-2 text-sm font-medium text-gray-700">
-                    Username
+                    Tên đăng nhập
                 </label>
                 <input
                     className="w-full p-2 border rounded-lg mb-4 focus:outline-none focus:border-blue-500"
@@ -74,7 +74,7 @@ export default function SignupPage() {
                 />
 
                 <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-700">
-                    Password
+                    Mật khẩu
                 </label>
                 <input
                     className="w-full p-2 border rounded-lg mb-4 focus:outline-none focus:border-blue-500"
@@ -97,9 +97,9 @@ export default function SignupPage() {
                 </button>
             </form>
             <p className="text-sm mt-4">
-                Already have an account?{" "}
+                Bạn đã có tài khoản?{" "}
                 <Link href="/login" className="text-blue-500 hover:underline">
-                    Login Page
+                    Đăng nhập
                 </Link>
             </p>
         </div>
