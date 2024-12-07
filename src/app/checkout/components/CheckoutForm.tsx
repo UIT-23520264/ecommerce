@@ -118,18 +118,6 @@ export default function POST({ paypalClientId, subTotal, shipping }: Props) {
                                 <input ref={phoneInput} className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" type="tel" />
                             </div>
                         </div>
-                        {/* <div>
-                        <label className="text-gray-600 font-semibold text-sm mb-2 ml-1">State / Province</label>
-                        <div>
-                            <input ref={provinceInput} className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" type="text" />
-                        </div>
-                    </div>
-                    <div>
-                        <label className="text-gray-600 font-semibold text-sm mb-2 ml-1">Postal code</label>
-                        <div>
-                            <input ref={postalCodeInput} className="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" type="text" />
-                        </div>
-                    </div> */}
                     </div>
                 </div>
             </div>
@@ -162,11 +150,17 @@ export default function POST({ paypalClientId, subTotal, shipping }: Props) {
                         <Image
                             src="/pay.jpg"
                             alt="Straws"
-                            width={400}
-                            height={300}
+                            width={300}
+                            height={200}
                             className="border-8 border-gray-500 items-center justify-center"
                         />
+                        <button
+                            className="mt-10 flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 w-full"
+                            onClick={() => router.push('/payment-success')}>
+                            Hoàn thành thanh toán
+                        </button>
                     </div>
+
                 </div>
 
             </div>
