@@ -34,7 +34,7 @@ export default function CartItem({ item }: Props) {
                         <h3>
                             <Link href={`/products/details/${item.productId}`}>{item.product.name}</Link>
                         </h3>
-                        <p className="ml-4">${item.product.discountPrice ? item.product.discountPrice : item.product.price}</p>
+                        <p className="ml-4">{item.product.discountPrice ? item.product.discountPrice : item.product.price} VND</p>
                     </div>
                     <p className="mt-1 text-sm text-gray-500">{item.product.desc}</p>
                 </div>

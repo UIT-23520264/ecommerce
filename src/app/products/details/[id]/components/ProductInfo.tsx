@@ -75,8 +75,8 @@ export default function ProductInfo({ product }: Props) {
         </div>
         <div className="mt-2 mb-5 flex items-center justify-between">
                 <p>
-                    <span className="text-3xl font-bold text-slate-900"> {discountPrice ? discountPrice : price}k VND</span>
-                    { discountPrice && (<span className="text-sm text-slate-900 line-through"> {price}k VND</span>) }
+                    <span className="text-3xl font-bold text-slate-900"> {discountPrice ? discountPrice : price} VND</span>
+                    { discountPrice && (<span className="text-sm text-slate-900 line-through"> {price} VND</span>) }
                 </p>
         </div>
             <div className="flex flex-col mb-4 justify-between">

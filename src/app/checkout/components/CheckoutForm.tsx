@@ -1,5 +1,5 @@
 'use client'
-
+import Image from 'next/image'
 import React, { useRef } from 'react'
 import Bill from './Bill'
 import {
@@ -50,7 +50,7 @@ export default function POST({ paypalClientId, subTotal, shipping }: Props) {
         }
     }
 
-    const paypalCaptureOrder = async (orderId:any)=> {
+    const paypalCaptureOrder = async (orderId: any) => {
         try {
             let response = await axios.post('/api/paypal/captureorder', {
                 orderId
@@ -136,7 +136,7 @@ export default function POST({ paypalClientId, subTotal, shipping }: Props) {
             <div className="px-3 md:w-5/12">
                 <Bill subTotal={subTotal} shipping={shipping} />
                 <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 text-gray-800 font-light mb-6">
-                    <div className="w-full p-3">
+                    <div className="w-full p-3 items-center justify-center">
                         <PayPalScriptProvider
                             options={{
                                 clientId: paypalClientId
@@ -159,6 +159,13 @@ export default function POST({ paypalClientId, subTotal, shipping }: Props) {
                                 }}
                             />
                         </PayPalScriptProvider>
+                        <Image
+                            src="/pay.jpg"
+                            alt="Straws"
+                            width={400}
+                            height={300}
+                            className="border-8 border-gray-500 items-center justify-center"
+                        />
                     </div>
                 </div>
 

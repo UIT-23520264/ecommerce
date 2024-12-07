@@ -1,45 +1,50 @@
-import { prisma } from "@/lib/db/prisma"
-import { notFound } from "next/navigation"
-import ProductGallery from "./components/ProductGallery"
-import ProductInfo from "./components/ProductInfo"
+import { prisma } from "@/lib/db/prisma";
+import { notFound } from "next/navigation";
+import ProductGallery from "./components/ProductGallery";
+import ProductInfo from "./components/ProductInfo";
 
 type Props = {
-    params: {
-        id: string
-    }
-}
+  params: {
+    id: string;
+  };
+};
 
-export async function generateMetadata({ params: { id }}: Props) {
+// Dynamic metadata generation
+export async function generateMetadata({ params }: Props) {
+  const { id } = params; // Safely extract `id`
+  const product = await prisma.product.findUnique({ where: { id } });
 
-    const product = await prisma.product.findUnique({where: {id}})
-    if (!product) {
-        return {
-            title: 'Product Not Found'
-        }
-    }
-
+  if (!product) {
     return {
-        title: product.name,
-        description: product.desc
-    }
+      title: "Product Not Found",
+    };
+  }
+
+  return {
+    title: product.name,
+    description: product.desc,
+  };
 }
 
-export default async function ProductPage({ params: { id }}: Props) {
-    const product = await prisma.product.findUnique({where: {id}})
-    if (!product) notFound()
+// Product page component
+export default async function ProductPage({ params }: Props) {
+  const { id } = params; // Safely extract `id`
+  const product = await prisma.product.findUnique({ where: { id } });
 
-    const { images } = product
+  if (!product) notFound();
 
-    return (
-        <div className="py-8">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col md:flex-row -mx-4 lg:items-center">
-                    <div className="md:flex-1 px-4">
-                        <ProductGallery images={images} />
-                    </div>
-                    <ProductInfo product={product} />
-                </div>
-            </div>
+  const { images } = product;
+
+  return (
+    <div className="py-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row -mx-4 lg:items-center">
+          <div className="md:flex-1 px-4">
+            <ProductGallery images={images} />
+          </div>
+          <ProductInfo product={product} />
         </div>
-    )
+      </div>
+    </div>
+  );
 }
